@@ -1,0 +1,17 @@
+csv = []
+
+csv << [
+  'Column',
+  'Column',
+  'Column',
+].map { |column| "\"#{column.strip}\"" }.join(',')
+
+[1, 2, 3].each do |resource|
+  row = [
+    resource
+  ]
+
+  csv << row.map { |column| "\"#{column.to_s.strip}\"" }.join(',')
+end; nil
+
+File.open('report.csv', 'w') { |file| file.write(csv.join("\n")) }

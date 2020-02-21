@@ -1,0 +1,11 @@
+fetch('/api/users', {
+  method: 'post',
+  body: 'foo=bar&lorem=ipsum'
+})
+  .then((response) => response.json()) // or response.text())
+  .then((responseJson) => {
+    console.log(responseJson);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
